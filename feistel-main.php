@@ -3,14 +3,15 @@ require ('feistel-fonction.php');
 
     
 function main() {
-    echo "********ALGORITHME DE FREISNEL CIPHER*********\n";
-    echo "Donnez une clé K de longueur 8\n";
+    echo "ALGO DE FEISTEL CIPHER\n\n";
+
+    echo "Donner une clé K de longueur 8 (Binaire)\n";
     $key = readline();
     while (strlen($key) < 8) {
         echo "La taille de la clé doit être de longueur 8\n";
         $key = readline();
     }
-    echo "Donnez la fonction H de permutation\n";
+    echo "Donner la fonction H de permutation\n";
     $h = readline();
     while (strlen($h) < 8) {
         echo "La taille doit être de longueur 8\n";
@@ -18,20 +19,20 @@ function main() {
     }
     $decg = 0;
     $decd = 0;
-    echo "Entrez l'ordre de décalage à gauche\n";
+    echo "Entrer l'ordre de décalage à gauche\n";
     $decg = readline();
     while ($decg <= 0) {
         echo "L'ordre doit être supérieur à 0\n";
         $decg = readline();
     }
-    echo "Entrez l'ordre de décalage à droite\n";
+    echo "Entrer l'ordre de décalage à droite\n";
     $decd = readline();
     while ($decd <= 0) {
         echo "L'ordre doit être supérieur à 0\n";
         $decd = readline();
     }
     $kgen = generateKey($key, $h, $decg, $decd);
-    echo "Entrez la valeur N ou C à traiter\n";
+    echo "Entrer la valeur N ou C à traiter\n";
     $n = readline();
     while (strlen($n) < 8) {
         echo "La taille doit être de longueur 8\n";
@@ -39,16 +40,16 @@ function main() {
     }
     $choix = -1;
     while ($choix != 1 &&$choix != 2) {
-        echo "Voulez-vous chiffrer ou dechiffrer? (1 pour dechiffrer et 2 pour chiffrer)\n";
+        echo "Entrer 1 pour Dechiffrer et 2 pour Chiffrer)\n";
         $choix = readline();
     }
-    echo "Entrez la permutation P de 4 bits\n";
+    echo "Entrer la permutation P de 4 bits\n";
     $p = readline();
     while (strlen($p) < 4) {
         echo "La taille doit être de longueur 4\n";
         $p = readline();
     }
-    echo "Entrez la clé de permutation pour l'opération de chiffrement ou déchiffrement\n";
+    echo "Entrer la clé de permutation pour l'opération de chiffrement ou déchiffrement\n";
     $keyc = readline();
     while (strlen($keyc) < 8) {
         echo "La taille doit être de longueur 8\n";
