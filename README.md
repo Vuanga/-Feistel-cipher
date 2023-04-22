@@ -5,3 +5,5 @@
 3. Naviguer jusqu'au chemin (path) du dossier où se trouve l'applicqtion ;
 4. Exécuter le code suivant : php feistel-main.php
 5. Suivre les instructions données par le programme
+
+Copyright 2023 - Mayimbi Vuanga
